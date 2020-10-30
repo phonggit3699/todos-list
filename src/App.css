@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+body h1 {
+  font-size: 50px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body form .input {
+  position: relative;
 }
+
+body form .todo-input {
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  height: 1.5rem;
+  color: #f58208;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  outline: none;
+}
+
+body form .todo-btn {
+  border: none;
+  background-color: white;
+  line-height: 24px;
+  color: #f58208;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+body form .filter-todo {
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  height: 1.5rem;
+  color: #f58208;
+  outline: none;
+  font-size: 15px;
+}
+
+body .todos-list {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .todos-list .todo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px 0 0 5px;
+  color: #f58208;
+}
+
+body .todos-list .complete-btn, body .todos-list .delete-btn {
+  border: none;
+  outline: none;
+  background-color: #0cf73b;
+  padding: 0.5rem;
+  color: white;
+  font-size: 16px;
+}
+
+body .todos-list .delete-btn {
+  background-color: #f50808;
+}
+/*# sourceMappingURL=App.css.map */
