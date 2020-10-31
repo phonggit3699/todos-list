@@ -1,27 +1,27 @@
-body{
+body {
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    background-repeat: none;
+    background-size: cover;
 
-    h1{
+    h1 {
         font-size: 50px;
         color: white;
     }
 
     form {
-
-        
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .input{
+        .input {
             position: relative;
         }
-        .todo-input{
+        .todo-input {
             border: none;
             border-radius: 10px;
             width: 90%;
@@ -30,10 +30,9 @@ body{
             padding: 0.5rem 1rem;
             font-size: 20px;
             outline: none;
-            
         }
 
-        .todo-btn{
+        .todo-btn {
             border: none;
             background-color: white;
             line-height: 24px;
@@ -45,48 +44,92 @@ body{
             font-size: 20px;
             cursor: pointer;
             outline: none;
+            transition: all 0.5s;
+            &:hover{
+                color: #00ff08;
+            }
+
+            &:active{
+                transform: translateY(-30%);
+            }
         }
 
-        .filter-todo{
+        
+
+        .filter-todo {
             margin-left: 10px;
             border: none;
-            border-radius: 5px;
-            height: 1.5rem;
+            border-radius: 10px;
+            height: 2.5rem;
             color: #f58208;
             outline: none;
             font-size: 15px;
+            cursor: pointer;
         }
 
     }
 
-    .todos-list{
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    .todo-container {
+        margin-top: 50px;
 
-        .todo{
-            flex: 1;
-            background-color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 5px 0 0 5px;
-            color: #f58208;
+        .todo-list {
+            list-style: none;
+            margin: 0;
+
+            .todo {
+                background-color: white;
+                margin-top: 5px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                padding-left: 0.5rem;
+                margin-left: -16px;
+
+                .todo-item {
+                    flex: 1;
+                    transition: all 1s;
+                }
+            }
         }
 
-        .complete-btn, .delete-btn{
+        .complete-btn,
+        .delete-btn {
             border: none;
             outline: none;
             background-color: #0cf73b;
             padding: 0.5rem;
             color: white;
             font-size: 16px;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            &:hover{
+                background-color: transparent;
+                color: #0cf73b;
+            }
+
+
+            &:active{
+                transform: translateY(4px);
+            }
         }
 
-        .delete-btn{
+        .delete-btn {
             background-color: #f50808;
+
+            &:hover{
+                background-color: white;
+                color: #f50808;
+            }
         }
     }
 
+    //Completed Clas
 
-
-} 
+    .completed {
+        text-decoration: line-through;
+        opacity: 0.5;
+        transition: all 1s ease;
+    }
+}

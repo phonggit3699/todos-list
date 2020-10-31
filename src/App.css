@@ -10,6 +10,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background-repeat: none;
+  background-size: cover;
 }
 
 body h1 {
@@ -57,20 +59,42 @@ body form .todo-btn {
   font-size: 20px;
   cursor: pointer;
   outline: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body form .todo-btn:hover {
+  color: #00ff08;
+}
+
+body form .todo-btn:active {
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
 }
 
 body form .filter-todo {
   margin-left: 10px;
   border: none;
-  border-radius: 5px;
-  height: 1.5rem;
+  border-radius: 10px;
+  height: 2.5rem;
   color: #f58208;
   outline: none;
   font-size: 15px;
+  cursor: pointer;
 }
 
-body .todos-list {
-  margin-top: 30px;
+body .todo-container {
+  margin-top: 50px;
+}
+
+body .todo-container .todo-list {
+  list-style: none;
+  margin: 0;
+}
+
+body .todo-container .todo-list .todo {
+  background-color: white;
+  margin-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,28 +103,57 @@ body .todos-list {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  padding-left: 0.5rem;
+  margin-left: -16px;
 }
 
-body .todos-list .todo {
+body .todo-container .todo-list .todo .todo-item {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 5px 0 0 5px;
-  color: #f58208;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-body .todos-list .complete-btn, body .todos-list .delete-btn {
+body .todo-container .complete-btn,
+body .todo-container .delete-btn {
   border: none;
   outline: none;
   background-color: #0cf73b;
   padding: 0.5rem;
   color: white;
   font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-body .todos-list .delete-btn {
+body .todo-container .complete-btn:hover,
+body .todo-container .delete-btn:hover {
+  background-color: transparent;
+  color: #0cf73b;
+}
+
+body .todo-container .complete-btn:active,
+body .todo-container .delete-btn:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+body .todo-container .delete-btn {
   background-color: #f50808;
+}
+
+body .todo-container .delete-btn:hover {
+  background-color: white;
+  color: #f50808;
+}
+
+body .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 /*# sourceMappingURL=App.css.map */
