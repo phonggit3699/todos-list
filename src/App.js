@@ -12,44 +12,41 @@ function App() {
     const [filteredTodo, setFilteredTodo] = useState([]);
 
     useEffect(() => {
+        const getLocalStorage = () => {
+            if (localStorage.getItem('todos' === null)) {
+                localStorage.setItem('todos', JSON.stringify([]));
+            }
+            else {
+                let todoLocal = JSON.parse(localStorage.getItem('todos'));
+                if (todoLocal) {
+                    setTodos(todoLocal);
+                }
+            }
+        }
         getLocalStorage();
     }, []);
 
     useEffect(() => {
+        const filterHandler = () => {
+            switch (status) {
+                case "completed": setFilteredTodo(todos.filter(todo => todo.completed === true));
+                    break;
+
+                case "uncompleted": setFilteredTodo(todos.filter(todo => todo.completed === false));
+                    break;
+
+                default: setFilteredTodo(todos);
+                    break;
+
+            }
+        }
+
+        const saveLocalStorage = () => {
+            localStorage.setItem('todos', JSON.stringify(todos));
+        }
         filterHandler();
         saveLocalStorage();
     }, [todos, status]);
-
-    const filterHandler = () => {
-        switch (status) {
-            case "completed": setFilteredTodo(todos.filter(todo => todo.completed === true));
-                break;
-
-            case "uncompleted": setFilteredTodo(todos.filter(todo => todo.completed === false));
-                break;
-
-            default: setFilteredTodo(todos);
-                break;
-
-        }
-    }
-
-    const saveLocalStorage = () => {
-        localStorage.setItem('todos', JSON.stringify(todos));
-    }
-
-    const getLocalStorage = () => {
-        if (localStorage.getItem('todos' === null)){
-            localStorage.setItem('todos', JSON.stringify([]));
-        }
-        else {
-        let todoLocal =  JSON.parse(localStorage.getItem('todos'));
-        if (todoLocal){
-            setTodos(todoLocal);
-        }
-        
-        }
-    }
 
     return (
         <div className="App">
